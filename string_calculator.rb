@@ -15,3 +15,19 @@ class StringCalculator
       numbers.sum
     end
 end
+
+
+calculator = StringCalculator.new
+
+puts calculator.add("")             # => 0
+puts calculator.add("1")            # => 1
+puts calculator.add("1,5")          # => 6
+puts calculator.add("1\n2,3")       # => 6
+puts calculator.add("//;\n1;2;3")   # => 6
+
+# Negative number example (will raise error):
+begin
+  calculator.add("1,-2,3,-4")
+rescue => e
+  puts e.message # => "negative numbers not allowed: -2,-4"
+end
