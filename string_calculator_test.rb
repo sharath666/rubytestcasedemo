@@ -31,6 +31,16 @@ class StringCalculatorTest < Minitest::Test
     assert_equal 10, @calc.add("//|\n2|3|5")
   end
 
+  def test_negative_number_raises_exception
+    error = assert_raises(RuntimeError) { @calc.add("1,-2") }
+    assert_equal "negative numbers not allowed: -2", error.message
+  end
 
+    def test_multiple_negative_numbers
+    error = assert_raises(RuntimeError) { @calc.add("1,-2,-5,3") }
+    assert_equal "negative numbers not allowed: -2,-5", error.message
+  end
+
+  
 
 end
