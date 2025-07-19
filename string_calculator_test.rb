@@ -40,7 +40,4 @@ class StringCalculatorTest < Minitest::Test
     error = assert_raises(RuntimeError) { @calc.add("1,-2,-5,3") }
     assert_equal "negative numbers not allowed: -2,-5", error.message
   end
-
-  
-
 end
