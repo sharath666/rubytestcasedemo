@@ -14,4 +14,9 @@ class StringCalculatorTest < Minitest::Test
     assert_equal 5, @calc.add("5")
   end
 
+  def test_two_numbers
+    assert_equal 6, @calc.add("1,5")
+  end
+
+
 end
